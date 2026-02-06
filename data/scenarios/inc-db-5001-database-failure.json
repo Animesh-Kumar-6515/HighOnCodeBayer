@@ -1,0 +1,49 @@
+{
+  "incident_id": "inc-db-5001",
+  "title": "Database connection pool exhaustion",
+  "category": "database_failure",
+  "severity": "SEV-1",
+  "start_time": "2026-02-06T13:58:00Z",
+  "environment": "production",
+  "affected_services": [
+    "payment-api",
+    "orders-db"
+  ],
+  "root_cause": {
+    "service": "orders-db",
+    "type": "capacity_limit",
+    "description": "Database max_connections too low for scaled application traffic"
+  },
+  "trigger_event": {
+    "type": "traffic_spike",
+    "description": "Payment traffic increased, triggering autoscaling of payment-api"
+  },
+  "expected_symptoms": {
+    "application": [
+      "increased latency",
+      "database timeouts",
+      "retry storms",
+      "circuit breaker activation"
+    ],
+    "database": [
+      "high connection usage",
+      "connection pool exhaustion",
+      "rejected connections"
+    ],
+    "infrastructure": [
+      "application autoscaling without corresponding database scaling"
+    ]
+  },
+  "resolution_guidance": {
+    "short_term": [
+      "Increase database max_connections",
+      "Throttle application traffic",
+      "Reduce application replicas"
+    ],
+    "long_term": [
+      "Introduce connection pooling layer",
+      "Add read replicas",
+      "Implement capacity-aware autoscaling"
+    ]
+  }
+}

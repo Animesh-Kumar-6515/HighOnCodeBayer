@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2026-02-06T14:00:41.012Z",
+    "level": "CRITICAL",
+    "domain": "database",
+    "service": "payment-api",
+    "environment": "production",
+    "region": "us-east-1",
+    "summary": "Critical dependency failure detected",
+    "impact": "Payment requests failing",
+    "incident_hint": "Database connectivity issue",
+    "correlation_id": "corr-db-5001"
+  }
+]

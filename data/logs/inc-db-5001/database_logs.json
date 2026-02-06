@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-02-06T13:59:20.332Z",
+    "level": "WARN",
+    "service": "orders-db",
+    "instance_id": "orders-db-primary",
+    "message": "High database connection usage detected",
+    "connections_used": 182,
+    "max_connections": 200,
+    "correlation_id": "corr-db-5001"
+  },
+  {
+    "timestamp": "2026-02-06T13:59:58.881Z",
+    "level": "ERROR",
+    "service": "orders-db",
+    "instance_id": "orders-db-primary",
+    "message": "Connection pool exhausted",
+    "error": {
+      "type": "MaxConnectionsExceeded",
+      "detail": "Remaining connection slots are reserved for superuser"
+    },
+    "connections_used": 200,
+    "correlation_id": "corr-db-5001"
+  },
+  {
+    "timestamp": "2026-02-06T14:00:18.664Z",
+    "level": "ERROR",
+    "service": "orders-db",
+    "instance_id": "orders-db-primary",
+    "message": "Rejecting new client connections",
+    "rejected_connections": 41,
+    "correlation_id": "corr-db-5001"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-02-06T13:58:00Z",
+    "metric": "http_request_latency_p95",
+    "value": 420,
+    "unit": "ms",
+    "service": "payment-api"
+  },
+  {
+    "timestamp": "2026-02-06T13:59:00Z",
+    "metric": "http_request_latency_p95",
+    "value": 980,
+    "unit": "ms",
+    "service": "payment-api"
+  },
+  {
+    "timestamp": "2026-02-06T14:00:00Z",
+    "metric": "http_request_latency_p95",
+    "value": 4100,
+    "unit": "ms",
+    "service": "payment-api"
+  },
+  {
+    "timestamp": "2026-02-06T14:00:00Z",
+    "metric": "http_error_rate",
+    "value": 0.22,
+    "unit": "ratio",
+    "service": "payment-api"
+  }
+]

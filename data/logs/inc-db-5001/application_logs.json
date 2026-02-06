@@ -1,0 +1,46 @@
+[
+  {
+    "timestamp": "2026-02-06T13:59:55.184Z",
+    "level": "WARN",
+    "service": "payment-api",
+    "instance_id": "payment-api-7f9c6d",
+    "message": "Database request latency exceeded threshold",
+    "latency_ms": 1850,
+    "threshold_ms": 500,
+    "trace_id": "trace-101",
+    "correlation_id": "corr-db-5001"
+  },
+  {
+    "timestamp": "2026-02-06T14:00:12.447Z",
+    "level": "ERROR",
+    "service": "payment-api",
+    "instance_id": "payment-api-82bd91",
+    "message": "Database request timed out",
+    "error": {
+      "type": "DBTimeout",
+      "detail": "Timed out waiting for connection from pool"
+    },
+    "retry_count": 1,
+    "trace_id": "trace-104",
+    "correlation_id": "corr-db-5001"
+  },
+  {
+    "timestamp": "2026-02-06T14:00:26.903Z",
+    "level": "ERROR",
+    "service": "payment-api",
+    "instance_id": "payment-api-82bd91",
+    "message": "Retry attempts exhausted for database operation",
+    "retry_count": 3,
+    "trace_id": "trace-105",
+    "correlation_id": "corr-db-5001"
+  },
+  {
+    "timestamp": "2026-02-06T14:00:38.902Z",
+    "level": "ERROR",
+    "service": "payment-api",
+    "instance_id": "payment-api-7f9c6d",
+    "message": "Circuit breaker opened for dependency",
+    "dependency": "orders-db",
+    "correlation_id": "corr-db-5001"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2026-02-06T13:58:41.002Z",
+    "level": "INFO",
+    "service": "autoscaler",
+    "message": "Scaling payment-api replicas",
+    "previous_replicas": 2,
+    "new_replicas": 6,
+    "reason": "Sustained increase in request rate",
+    "correlation_id": "corr-db-5001"
+  },
+  {
+    "timestamp": "2026-02-06T13:59:05.771Z",
+    "level": "WARN",
+    "service": "orders-db",
+    "message": "Database connection limit unchanged during traffic increase",
+    "current_max_connections": 200,
+    "correlation_id": "corr-db-5001"
+  }
+]

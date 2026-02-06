@@ -1,0 +1,48 @@
+{
+  "environment": "production",
+  "region": "us-east-1",
+  "cluster": "prod-cluster-1",
+  "nodes": [
+    { "id": "node-a1", "type": "worker" },
+    { "id": "node-a2", "type": "worker" },
+    { "id": "node-db1", "type": "database" }
+  ],
+  "services": [
+    {
+      "name": "payment-api",
+      "type": "application",
+      "language": "java",
+      "instances": [
+        {
+          "id": "payment-api-7f9c6d",
+          "node": "node-a1"
+        },
+        {
+          "id": "payment-api-82bd91",
+          "node": "node-a2"
+        }
+      ],
+      "dependencies": [
+        {
+          "service": "orders-db",
+          "type": "database"
+        }
+      ]
+    },
+    {
+      "name": "orders-db",
+      "type": "database",
+      "engine": "postgres",
+      "role": "primary",
+      "instances": [
+        {
+          "id": "orders-db-primary",
+          "node": "node-db1"
+        }
+      ],
+      "configuration": {
+        "max_connections": 200
+      }
+    }
+  ]
+}
